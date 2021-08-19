@@ -1,7 +1,7 @@
 <template>
     <Page>
         <ActionBar>
-            <Label text="Home"/>
+            <Label :text="actionBarTitle"/>
         </ActionBar>
 
         <GridLayout>
@@ -17,9 +17,14 @@
 
 <script>
   export default {
+    data () {
+      return {
+        actionBarTitle: 'My Recording App!'
+      }
+    },
     computed: {
       message() {
-        return "Blank {N}-Vue app";
+        return Date.now().toString() + '.wav';
       }
     }
   };
