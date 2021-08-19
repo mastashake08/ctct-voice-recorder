@@ -11,7 +11,7 @@
                     <Span :text="message"/>
                 </FormattedString>
             </Label>
-            <Button text="start" @tap="startRecording" />
+            <Button :text="recordingButtonText" @tap="startRecording" />
         </StackLayout>
     </Page>
 </template>
@@ -20,7 +20,8 @@
   export default {
     data () {
       return {
-        actionBarTitle: 'My Recording App!'
+        actionBarTitle: 'My Recording App!',
+        isRecording: false
       }
     },
     methods: {
@@ -31,6 +32,9 @@
     computed: {
       message() {
         return Date.now().toString() + '.wav';
+      },
+      recordingButtonText () {
+        return this.isRecording ? 'Stop Recording' : 'Start Recording'
       }
     }
   };
