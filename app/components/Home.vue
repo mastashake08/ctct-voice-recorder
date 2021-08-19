@@ -4,14 +4,15 @@
             <Label :text="actionBarTitle"/>
         </ActionBar>
 
-        <GridLayout>
+        <StackLayout>
             <Label class="info">
                 <FormattedString>
                     <Span class="fas" text.decode="&#xf135; "/>
                     <Span :text="message"/>
                 </FormattedString>
             </Label>
-        </GridLayout>
+            <Button text="start" @tap="startRecording" />
+        </StackLayout>
     </Page>
 </template>
 
@@ -20,6 +21,11 @@
     data () {
       return {
         actionBarTitle: 'My Recording App!'
+      }
+    },
+    methods: {
+      startRecording () {
+        alert('DO SOMETHING')
       }
     },
     computed: {
