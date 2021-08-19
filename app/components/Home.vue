@@ -27,6 +27,7 @@
     methods: {
       startRecording () {
         alert('DO SOMETHING')
+        this.isRecording = !this.isRecording
       }
     },
     computed: {
