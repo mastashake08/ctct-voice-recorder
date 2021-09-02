@@ -17,11 +17,16 @@
 </template>
 
 <script>
+import {
+  AudioRecorder,
+  AudioRecorderOptions
+} from '@nstudio/nativescript-audio-recorder';
   export default {
     data () {
       return {
         actionBarTitle: 'My Recording App!',
-        isRecording: false
+        isRecording: false,
+        recorder: {}
       }
     },
     methods: {
@@ -37,9 +42,12 @@
       recordingButtonText () {
         return this.isRecording ? 'Stop Recording' : 'Start Recording'
       }
+    },
+    created () {
+      this.recorder = new AudioRecorder()
     }
   };
-</script>
+</script>b
 
 <style scoped lang="scss">
     @import '@nativescript/theme/scss/variables/blue';
